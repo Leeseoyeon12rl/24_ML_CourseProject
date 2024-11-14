@@ -18,11 +18,13 @@ The data is based on packet captures, leveraging packet sizes and timestamps as 
 
 Project Structure
 
+
 Data Processing
 
 Data Source: Packets are captured from Tor traffic and filtered based on the client IP and Tor relay IPs.
 
 Feature Extraction: We extract key features such as relative packet timestamps, packet sizes, cumulative packet sizes, and burst patterns to distinguish traffic between websites.
+
 
 
 ClosedWorld Classification
@@ -42,11 +44,13 @@ Subsequent Multi-class Classification: For unmonitored traffic, we perform a sec
 Evaluation Metrics: True positive rate, false positive rate, precision-recall curve, and ROC are considered for evaluating OpenWorld results.
 
 
+
 Installation and Dependencies
 
 Dependencies: Install necessary libraries by running:
 
 The project primarily relies on libraries such as numpy, scikit-learn, and tensorflow/keras for data processing, model building, and evaluation.
+
 
 
 Data Setup: Ensure packet data is structured in a .pkl format as data.pkl. The data should include:
