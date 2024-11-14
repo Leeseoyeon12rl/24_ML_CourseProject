@@ -11,6 +11,7 @@ OpenWorld: A binary classification of monitored vs. unmonitored traffic and a su
 The data is based on packet captures, leveraging packet sizes and timestamps as features for fingerprinting analysis.
 
 '''
+
 Project Structure
 
 Data Processing
