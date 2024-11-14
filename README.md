@@ -2,12 +2,14 @@
 Website Fingerprinting on Tor.
 
 '''
+
 Project Overview
 This project explores website fingerprinting attacks on anonymous networks, specifically targeting Tor traffic patterns to classify sites based on packet data. The attack is divided into two scenarios: ClosedWorld and OpenWorld.
 
 ClosedWorld: Multi-class classification to identify 95 monitored websites.
 OpenWorld: A binary classification of monitored vs. unmonitored traffic and a subsequent multi-class classification within unmonitored traffic to identify the 95 sites.
 The data is based on packet captures, leveraging packet sizes and timestamps as features for fingerprinting analysis.
+
 '''
 Project Structure
 
