@@ -1,7 +1,28 @@
 # 24_ML_CourseProject
 Website Fingerprinting on Tor.
 
-Experiment Settings: 
+Experiment Settings:
+
+1) Size of the data
+
+mon_standard.pkl - 19000 instances(95 websites, each with 10 subpages which are non-index pages, observed 20 times each), features : X1-X2
+unmon_standard10_3000.pkl - 3000 instances, features : X1-X2
+
+mon_standard_withlabel.pkl - 19000 instances, features : X1-X4, label : 0-94 
+mon_standard_withlabel_binary.pkl - 19000 instances, features : X1-X4, label : 1
+unmon_standard10_3000_withlabel.pkl - 3000 instances, features : X1-X4, label : -1
+combined_dataset.pkl - 22000 instances, features : X1-X4, label : -1 and 0-94
+combined_dataset_binary.pkl - 22000 instances, features : X1-X4, label : -1 and 1
+
+2) Resources needed
+
+RAM used : _GB
+Available number of CPU Core : 8
+
+
+Python : 3.11.7
+scikit-learn : 1.5.2
+numpy : 1.26.4
 
 '''
 
@@ -11,7 +32,8 @@ How to run the model:
 2. Execute ClosedWorld_monitored.ipynb.
 3. Execute OpenWorld_multiclass_classification.ipynb. Then you will get mon_standard_withlabel.pkl, unmon_standard10_3000_withlabel.pkl, and combined_dataset.pkl.
 4. Execute OpenWorld_binary_classification.ipynb. Then you will get mon_standard_withlabel_binary.pkl and combined_dataset_binary.pkl.
-   P.S. If you want to check the original dataset, execute load_pickle_code.ipynb. This practice is not essential.
+   
+P.S. If you want to check the original dataset, execute load_pickle_code.ipynb. This practice is not essential.
 
 '''
 
