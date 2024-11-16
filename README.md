@@ -17,11 +17,14 @@ combined_dataset_binary.pkl - 22000 instances, features : X1-X4, label : -1 and 
 2) Resources needed
 
 RAM used : _GB
+
 Available number of CPU Core : 8
 
 
 Python : 3.11.7
+
 scikit-learn : 1.5.2
+
 numpy : 1.26.4
 
 '''
