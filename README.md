@@ -7,7 +7,7 @@ Experiment Settings:
 
 How to run the model:
 
-1.Download mon_standard.pkl and unmon_standard10_3000.pkl
+1. Download mon_standard.pkl and unmon_standard10_3000.pkl
 2. Execute ClosedWorld_monitored.ipynb.
 3. Execute OpenWorld_multiclass_classification.ipynb. Then you will get mon_standard_withlabel.pkl, unmon_standard10_3000_withlabel.pkl, and combined_dataset.pkl.
 4. Execute OpenWorld_binary_classification.ipynb. Then you will get mon_standard_withlabel_binary.pkl and combined_dataset_binary.pkl.
