@@ -11,6 +11,7 @@ How to run the model:
 2. Execute ClosedWorld_monitored.ipynb.
 3. Execute OpenWorld_multiclass_classification.ipynb. Then you will get mon_standard_withlabel.pkl, unmon_standard10_3000_withlabel.pkl, and combined_dataset.pkl.
 4. Execute OpenWorld_binary_classification.ipynb. Then you will get mon_standard_withlabel_binary.pkl and combined_dataset_binary.pkl.
+   P.S. If you want to check the original dataset, execute load_pickle_code.ipynb. This practice is not essential.
 
 '''
 
