@@ -6,12 +6,18 @@ Experiment Settings:
 1) Size of the data
 
 mon_standard.pkl - 19000 instances(95 websites, each with 10 subpages which are non-index pages, observed 20 times each), features : X1-X2
+
 unmon_standard10_3000.pkl - 3000 instances, features : X1-X2
 
+
 mon_standard_withlabel.pkl - 19000 instances, features : X1-X4, label : 0-94 
+
 mon_standard_withlabel_binary.pkl - 19000 instances, features : X1-X4, label : 1
+
 unmon_standard10_3000_withlabel.pkl - 3000 instances, features : X1-X4, label : -1
+
 combined_dataset.pkl - 22000 instances, features : X1-X4, label : -1 and 0-94
+
 combined_dataset_binary.pkl - 22000 instances, features : X1-X4, label : -1 and 1
 
 2) Resources needed
