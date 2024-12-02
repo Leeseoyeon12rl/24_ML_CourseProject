@@ -17,9 +17,9 @@ The attack is divided into two scenarios: ClosedWorld and OpenWorld.
 
 Data Source: mon_standard.pkl (Feature X1: timestamps, X2: direction*size, y: site of each instance), umnom_standard10_3000.pkl (Feature X1: timestamps, X2: direction*size)
 
-Feature Extraction: We extract key features such as relative X1: packet timestamps, X2: packet sizes, X3: cumulative packet sizes, and X4: burst patterns to distinguish traffic between websites.
+Feature Extraction: We extract key features such as relative X1: packet timestamps, X2: packet sizes, X3: cumulative packet sizes, X4: burst patterns, X5: Time differences between packets, and X6: Standard Deviation of packets to distinguish traffic between websites.
 
-- X3 and X4 are the added features.
+- X3, X4, X5, and X6 are the added features.
 
 ClosedWorld Classification: Multi-class classification for 95 specific websites.
 
