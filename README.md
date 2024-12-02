@@ -70,3 +70,25 @@ Evaluation Metrics: True positive rate, false positive rate, precision-recall cu
 P.S. If you want to check the original dataset, execute load_pickle_code.ipynb. This practice is not essential.
 
 ---
+
+## ▶️ Experimental Results and Model Selection Justification
+
+### 1. Experimental Results
+
+- **Random Forest (Entropy)**: Accuracy = `0.9018`
+- **Random Forest (Gini)**: Accuracy = `0.8981`
+- **Boosted Random Forest**: Accuracy = `0.9018` (no improvement over standard Random Forest)
+- **Linear SVM**: Accuracy = `0.8963`
+- **Pipelined SVM**: Accuracy = `0.8844` (did not perform better compared to standalone Linear SVM)
+
+### 2. Model and Parameter Selection Justification
+
+- **Random Forest with Entropy** was chosen due to its high accuracy (`0.9018`) compared to other tested models.
+- **Random Forest (Gini)** had slightly lower performance (`0.8981`) but was still competitive.
+- **Boosted Random Forest** did not show improvement, indicating boosting was not effective for this dataset.
+- **Linear SVM** performed reasonably well (`0.8963`), but not as well as Random Forest.
+- **Pipelined SVM** (with scaling and hyperparameter tuning) had lower accuracy (`0.8844`), suggesting that additional complexity did not yield better results.
+
+Overall, **Random Forest (Entropy)** was selected for its balance of accuracy and simplicity, while other models either underperformed or added unnecessary complexity.
+
+---
