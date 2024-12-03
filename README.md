@@ -73,22 +73,76 @@ P.S. If you want to check the original dataset, execute load_pickle_code.ipynb. 
 
 ## ▶️ Experimental Results and Model Selection Justification
 
-### 1. Experimental Results
+### **1. Experimental Results**
 
-- **Random Forest (Entropy)**: Accuracy = `0.9018`
-- **Random Forest (Gini)**: Accuracy = `0.8981`
-- **Boosted Random Forest**: Accuracy = `0.9018` (no improvement over standard Random Forest)
-- **Linear SVM**: Accuracy = `0.8963`
-- **Pipelined SVM**: Accuracy = `0.8844` (did not perform better compared to standalone Linear SVM)
+#### **ClosedWorld Results**
 
-### 2. Model and Parameter Selection Justification
+**Classification Metrics:**
+- **Accuracy**: `0.90` (Random Forest with Entropy)  
+- **Macro Avg Precision**: `0.90`, **Macro Avg Recall**: `0.90`, **Macro Avg F1-Score**: `0.90`  
+- **Weighted Avg Precision**: `0.91`, **Weighted Avg Recall**: `0.90`, **Weighted Avg F1-Score**: `0.90`  
 
-- **Random Forest with Entropy** was chosen due to its high accuracy (`0.9018`) compared to other tested models.
-- **Random Forest (Gini)** had slightly lower performance (`0.8981`) but was still competitive.
-- **Boosted Random Forest** did not show improvement, indicating boosting was not effective for this dataset.
-- **Linear SVM** performed reasonably well (`0.8963`), but not as well as Random Forest.
-- **Pipelined SVM** (with scaling and hyperparameter tuning) had lower accuracy (`0.8844`), suggesting that additional complexity did not yield better results.
+**Class-Level Performance:**
+- Most classes showed F1-scores above `0.85`, demonstrating strong generalization across the dataset.
+- Certain classes, such as Class `9` (F1: `0.58`), exhibited lower performance, likely due to overlapping feature patterns.
 
-Overall, **Random Forest (Entropy)** was selected for its balance of accuracy and simplicity, while other models either underperformed or added unnecessary complexity.
+**Model Comparison:**
+- **Random Forest (Entropy)**:  
+  - Accuracy = `0.9018`  
+  - Outperformed other models in both overall accuracy and class-level F1-scores.  
+- **Random Forest (Gini)**:  
+  - Accuracy = `0.8981`  
+  - Similar performance to Entropy but slightly lower precision and recall.  
+- **Boosted Random Forest**:  
+  - Accuracy = `0.9018` (no improvement)  
+  - Boosting added computational cost without tangible accuracy gains.  
+- **Linear SVM**:  
+  - Accuracy = `0.8963`  
+  - Slightly weaker compared to Random Forest.  
+- **Pipelined SVM**:  
+  - Accuracy = `0.8844`  
+  - Despite additional preprocessing, performance was weaker, indicating the dataset's structure is better suited for tree-based models.
+
+#### **OpenWorld-Multiclass Results**
+
+**Classification Metrics:**
+- **Weighted Avg Precision**: `0.5496`  
+- **Weighted Avg Recall**: `0.5327`  
+- **Weighted Avg F1-Score**: `0.5212`  
+
+**Class-Level Performance:**
+- **Unmonitored Class (`-1`)**:  
+  - Precision: `0.46`, Recall: `0.81`, F1-Score: `0.59`  
+  - High recall indicates effective detection of unmonitored traffic but at the cost of precision.  
+- **Monitored Classes (`0-94`)**:  
+  - Performance varied significantly, with some classes achieving F1-scores > `0.7` (e.g., Class `12` with F1: `0.70`), while others showed poor performance (e.g., Class `24` with F1: `0.12`).
+
+**Model Insights:**
+- Imbalanced data in the OpenWorld setting led to reduced precision and recall for smaller classes.
+- Random Forest showed robust performance overall but highlighted the challenges of fine-grained traffic analysis in OpenWorld scenarios.
+
+#### **OpenWorld-Binary Results**
+
+**Classification Metrics:**
+- **Accuracy**: `0.9759` (Logistic Regression)  
+- **High Accuracy**: Logistic Regression achieved a high accuracy of `0.9759` for distinguishing between monitored and unmonitored traffic.
+- Given the satisfactory results, no additional tuning was performed for the OpenWorld-Binary scenario.
+
+### **2. Model and Parameter Selection Justification**
+
+#### **ClosedWorld**
+- **Selected Model**: Random Forest with Entropy  
+  - **Reason**: Achieved the highest overall accuracy (`0.9018`) and macro-average F1-score (`0.90`).  
+  - Consistent performance across most classes.
+
+#### **OpenWorld-Multiclass**
+- **Selected Model**: Random Forest  
+  - **Reason**: Demonstrated the best performance despite data imbalance.  
+  - Precision (`0.55`) and recall (`0.53`) highlight its ability to manage multiclass complexity better than alternatives.
+
+#### **OpenWorld-Binary**
+- **Selected Model**: Logistic Regression  
+  - **Reason**: Achieved high accuracy (`0.9759`) for distinguishing between monitored and unmonitored traffic.  
+  - Given the satisfactory initial results, no additional parameter tuning was deemed necessary.
 
 ---
