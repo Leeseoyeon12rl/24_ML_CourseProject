@@ -49,7 +49,7 @@ Evaluation Metrics: True positive rate, false positive rate, precision-recall cu
 
 ### 2. Resources needed
 
--  RAM used : _GB
+-  RAM used : CW 6.22GB
 -  Available number of CPU Core : 8
 
 ### 3. Execution Environment
