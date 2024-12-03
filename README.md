@@ -103,6 +103,8 @@ P.S. If you want to check the original dataset, execute load_pickle_code.ipynb. 
   - Accuracy = `0.8844`  
   - Despite additional preprocessing, performance was weaker, indicating the dataset's structure is better suited for tree-based models.
 
+![closedworldplot](https://github.com/user-attachments/assets/fdba0da3-59b3-4e1d-87b8-837318da2a89)
+
 #### **OpenWorld-Multiclass Results**
 
 **Classification Metrics:**
