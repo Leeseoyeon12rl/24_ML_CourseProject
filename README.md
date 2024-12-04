@@ -105,23 +105,29 @@ P.S. If you want to check the original dataset, execute load_pickle_code.ipynb. 
 
 ![closedworldplot](https://github.com/user-attachments/assets/fdba0da3-59b3-4e1d-87b8-837318da2a89)
 
-#### **OpenWorld-Multiclass Results**
+#### **OpenWorld Results**
 
 **Classification Metrics:**
-- **Weighted Avg Precision**: `0.5496`  
-- **Weighted Avg Recall**: `0.5327`  
-- **Weighted Avg F1-Score**: `0.5212`  
+- **Accuracy**: `0.43` (Random Forest with Entropy)
+- **Macro Avg Precision**: `0.38`, **Macro Avg Recall**: `0.36`, **Macro Avg F1-Score**: `0.36`
+- **Weighted Avg Precision**: `0.41`, **Weighted Avg Recall**: `0.43`, **Weighted Avg F1-Score**: `0.40`
 
 **Class-Level Performance:**
-- **Unmonitored Class (`-1`)**:  
-  - Precision: `0.46`, Recall: `0.81`, F1-Score: `0.59`  
-  - High recall indicates effective detection of unmonitored traffic but at the cost of precision.  
-- **Monitored Classes (`0-94`)**:  
-  - Performance varied significantly, with some classes achieving F1-scores > `0.7` (e.g., Class `12` with F1: `0.70`), while others showed poor performance (e.g., Class `24` with F1: `0.12`).
+- The unmonitored class (`-1`) had the best performance with an F1-score of `0.70`, indicating that distinguishing between monitored and unmonitored traffic was generally successful.
+- Many monitored classes had significantly lower F1-scores, indicating poor performance in fine-grained classification. For instance, Class `1` had an F1-score of `0.20`, highlighting challenges in differentiating specific monitored websites.
+- Performance varied substantially among classes, with F1-scores ranging from `0.08` (Class `38`) to `0.86` (Class `75`).
 
 **Model Insights:**
-- Imbalanced data in the OpenWorld setting led to reduced precision and recall for smaller classes.
-- Random Forest showed robust performance overall but highlighted the challenges of fine-grained traffic analysis in OpenWorld scenarios.
+- **Random Forest (Entropy)** was selected due to its ability to handle the complexity of the OpenWorld dataset, though the overall accuracy remained relatively low (`0.43`).
+- The **imbalanced dataset** contributed to the challenges observed in precision and recall metrics, particularly for the smaller classes. More effective balancing or a different model may be needed to improve these metrics.
+- The current model shows potential in detecting the broader difference between monitored and unmonitored traffic but struggles in accurately identifying individual monitored websites.
+
+**Performance Summary:**
+- The **Precision-Recall Curve** analysis indicates inconsistent performance, especially across multiple thresholds. The **AUC** (`0.29`) further emphasizes the limitations in distinguishing between classes effectively.
+- Overall, while **Random Forest** provided a starting point for the classification task, further optimization and possible use of different algorithms might be necessary to improve the results.
+
+- ![image](https://github.com/user-attachments/assets/0fb68dcf-d62d-470a-9598-d74763ad527f)
+
 
 #### **OpenWorld-Binary Results**
 
@@ -139,8 +145,10 @@ P.S. If you want to check the original dataset, execute load_pickle_code.ipynb. 
 
 #### **OpenWorld-Multiclass**
 - **Selected Model**: Random Forest  
-  - **Reason**: Demonstrated the best performance despite data imbalance.  
-  - Precision (`0.55`) and recall (`0.53`) highlight its ability to manage multiclass complexity better than alternatives.
+  - **Reason**: Random Forest was chosen for its ability to manage class imbalance and handle large datasets. The final model (n_estimators=300, max_depth=10) balanced efficiency and performance.
+  - The imbalanced dataset led to difficulties in precision and recall, suggesting the need for better balancing or different models like Gradient Boosting.
+  - Further tuning or different approaches are needed to improve fine-grained classification of monitored classes.
+
 
 #### **OpenWorld-Binary**
 - **Selected Model**: Logistic Regression  
