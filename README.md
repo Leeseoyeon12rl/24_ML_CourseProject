@@ -129,7 +129,8 @@ P.S. If you want to check the original dataset, execute load_pickle_code.ipynb. 
 - The **Precision-Recall Curve** analysis indicates inconsistent performance, especially across multiple thresholds. The **AUC** (`0.29`) further emphasizes the limitations in distinguishing between classes effectively.
 - Overall, while **Random Forest** provided a starting point for the classification task, further optimization and possible use of different algorithms might be necessary to improve the results.
 
-- ![image](https://github.com/user-attachments/assets/0fb68dcf-d62d-470a-9598-d74763ad527f)
+- ![image](https://github.com/user-attachments/assets/76f1a902-f410-4feb-bbae-269dbd50d8aa)
+
 
 
 #### **OpenWorld-Binary Results**
